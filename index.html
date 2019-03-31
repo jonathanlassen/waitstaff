@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Waitstaff</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans leading-normal ">
+<div class="min-h-screen bg-cover bg-center" style="background-image:url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)">
+    <div class="min-h-screen" style="background-color:hsla(229, 48%, 24%, 0.9);">
+    <div class="flex items-stretch justify-center " >
+        <h2 class="text-teal-lightest mt-10 mb-5">Waitstaff Calculator</h2>
+    </div>
+    <div class="flex items-stretch justify-center" >
+        
+            <div class=" w-2/5 text-grey-darker text-center bg-grey-lighter m-4 border border-grey  shadow-lg">
+                
+                    <h3 class="border-b border-grey py-5 bg-grey-light" >Enter the Meal Details</h3>
+                    <div class="py-5 px-5 text-sm mt-10">
+                    <form id="js-meal-details-form">
+                        <div class="flex m-1">
+                            
+                            <div class="w-1/2 text-right p-1">
+                                <label for="base-meal-price">Base Meal Price $</label>
+                            </div>
+                            <div class="w-1/2 text-left  p-1">
+                                <input type="text" class="border border-grey" size="4" name="base-meal-price" id="base-meal-price">
+                            </div>
+                        </div>
+
+                        <div class="flex m-1">
+                            
+                                <div class="w-1/2 text-right  p-1">
+                                        <label for="tax-rate">Tax Rate %</label>
+                                </div>
+                                <div class="w-1/2 text-left  p-1">
+                                        <input class="border border-grey" type="text" size="2" name="tax-rate" id="tax-rate">
+                                </div>
+                        </div>
+
+                        <div class="flex m-1">
+                            
+                                <div class="w-1/2 text-right p-1">
+                                        <label for="tip-percentage">Tip Percentage %</label>
+                                </div>
+                                <div class="w-1/2 text-left p-1">
+                                        <input class="border border-grey" type="text" size="2" name="tip-percentage" id="tip-percentage">
+                                </div>
+                        </div>
+                                <div class="mt-5 ">
+                                        <button  type="submit" class="m-1 bg-transparent hover:bg-grey-darker text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent ">
+                                                Submit
+                                        </button>
+                                        <button  class=" cancel m-1 bg-transparent hover:bg-grey-darker text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent ">
+                                                Cancel
+                                        </button>
+                            
+                                </div>                 
+                            
+                    </form>
+                    </div>
+
+
+            </div>
+            <div class="w-2/5 text-grey-darker text-center ">
+                    <div class="text-grey-darker text-center bg-grey-lighter m-4 border border-grey  shadow-lg">
+                        
+                        <h3 class="border-b border-grey py-5 bg-grey-light" >Customer Charges</h3>
+                            <div class="py-5 text-sm">
+                                <div class="flex ">
+                                
+                                        <div class="flex-1 text-right p-1">
+                                                Subtotal
+                                        </div>
+                                        <div id="subtotal" class="flex-1 text-left p-1">
+                                                0.00
+                                        </div>
+                                </div>
+
+                                <div class="flex">
+                                
+                                        <div class="flex-1 text-right p-1 ">
+                                                Tip
+                                        </div>
+                                        <div id="tip"  class="flex-1 text-left p-1">
+                                                0.00
+                                        </div>
+                                </div>
+
+                                <div class="flex border-b border-grey ml-24 mr-24">
+                                
+                        
+                                </div>
+
+                                <div class="flex">
+                                
+                                        <div class="flex-1 text-right p-1">
+                                                Total
+                                        </div>
+                                        <div id="total"  class="flex-1 text-left p-1">
+                                                0.00
+                                        </div>
+                                </div>
+
+                        </div>
+                    </div>
+                    <div class=" text-grey-darker text-center bg-grey-lighter m-4 border border-grey  shadow-lg">
+                        
+                            <h3 class="border-b border-grey py-5 bg-grey-light" >My Earnings Info</h3>
+                            <div class="py-5 ">
+                            <div class="flex text-sm">
+                            
+                                    <div class="flex-1 text-right p-1">
+                                            Tip Total
+                                    </div>
+                                    <div id="tiptotal" class="flex-1 text-left p-1">
+                                            0.00
+                                    </div>
+                            </div>
+
+                            <div class="flex text-sm">
+                            
+                                    <div class="flex-1 text-right p-1">
+                                            Meal Count
+                                    </div>
+                                    <div id="mealcount"  class="flex-1 text-left p-1">
+                                            0
+                                    </div>
+                            </div>
+
+                            <div class="flex  text-sm">
+                            
+                                    <div class="flex-1 text-right p-1">
+                                            Average Tip Per meal
+                                    </div>
+                                    <div id="tipaverage"  class="flex-1 text-left p-1">
+                                            0
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>   
+            </div>
+        </div>
+
+
+        <div id="reset_buttom" class="text-center">
+                <button  class=" reset m-1 bg-grey  hover:bg-grey-darker text-blue-dark font-semibold hover:text-white py-2 px-4 ">
+                        Reset
+                </button>
+
+        </div>
+
+      </div>
+    </div>     
+    
+</div>
+</body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
+
